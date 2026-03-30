@@ -38,13 +38,13 @@
 ;; s[k + 1, 2j] = (s[k, j] + a[k, j]) / √2
 (defn invert-1 [s a k j]
   (let [x (/ (+ (get s j) (get a j)) sqrt-two)]
-    (log/debug (str "invert: s = " s " a = " a ", k = " k ", j = " j ", s[k + 1, 2j] = " x))
+    (log/debug (str "invert: k = " k ", j = " j ", s[k + 1, 2j] = " x))
     x))
 
 ;; s[k + 1, 2j + 1] = (s[k, j] - a[k, j]) / √2
 (defn invert-2 [s a k j]
   (let [x (/ (- (get s j) (get a j)) sqrt-two)]
-    (log/debug (str "invert: s = " s " a = " a ", k = " k ", j = " j ", s[k + 1, 2j + 1] = " x))
+    (log/debug (str "invert: k = " k ", j = " j ", s[k + 1, 2j + 1] = " x))
     x))
 
 (defn invert [s a]
